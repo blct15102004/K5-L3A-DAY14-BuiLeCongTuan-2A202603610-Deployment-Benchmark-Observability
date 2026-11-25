@@ -1,12 +1,10 @@
 # Deployment Information
 
 ## Public URL
-https://<your-agent-domain>.up.railway.app
-
-> **Lưu ý:** Cần đăng nhập tài khoản Railway (`railway login`) hoặc Render Blueprint trên trình duyệt để xuất bản service từ thư mục `06-lab-complete/` kèm Redis add-on và cập nhật URL thực tế vào đây trước khi nộp bài.
+https://heartfelt-nurturing-production-5e05cb4e.up.railway.app
 
 ## Platform
-Railway (hoặc Render) — cấu hình sẵn trong `06-lab-complete/railway.toml` và `06-lab-complete/render.yaml`
+Railway — cấu hình trong `06-lab-complete/railway.toml` và `06-lab-complete/Dockerfile`
 
 ## Deploy Commands (Railway)
 ```bash
@@ -25,7 +23,7 @@ railway domain
 
 ### Health & Readiness Check
 ```bash
-BASE="https://<your-agent-domain>.up.railway.app"
+BASE="https://heartfelt-nurturing-production-5e05cb4e.up.railway.app"
 curl -sS -o /dev/null -w '%{http_code}\n' "$BASE/health"   # Expected: 200
 curl -sS -o /dev/null -w '%{http_code}\n' "$BASE/ready"    # Expected: 200
 ```

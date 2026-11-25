@@ -288,7 +288,9 @@ Total messages: 10
 
 ### Exercise 3.1 / 3.2: Triển khai lên Cloud & So sánh `railway.toml` vs `render.yaml`
 
-- **URL public & hướng dẫn kiểm tra:** xem [DEPLOYMENT.md](DEPLOYMENT.md) *(cần đăng nhập tài khoản Railway/Render cá nhân trên máy để lấy domain public và chụp 3 ảnh `dashboard.png`, `running.png`, `test.png`)*.
+- **URL public (Railway):** https://heartfelt-nurturing-production-5e05cb4e.up.railway.app
+- **Chi tiết lệnh test & biến môi trường:** xem [DEPLOYMENT.md](DEPLOYMENT.md)
+- **Screenshots:** [dashboard.png](screenshots/dashboard.png), [running.png](screenshots/running.png), [test.png](screenshots/test.png)
 - **So sánh `railway.toml` với `render.yaml`:**
   - **Định dạng & phạm vi:** `railway.toml` dùng định dạng **TOML** cấu hình cho một service đơn lẻ (cách build, healthcheck, restart policy), còn biến môi trường và Redis add-on thường được cấu hình trên Dashboard/CLI. `render.yaml` là **Blueprint (YAML)** theo hướng Infrastructure-as-Code khai báo toàn bộ kiến trúc đa service (web service, Redis, envVars) trong một file.
   - **Cấu hình build & deploy:** `railway.toml` khai báo `[build] builder = "DOCKERFILE"` và `[deploy] healthcheckPath = "/health"`, `restartPolicyType`. `render.yaml` khai báo `type: web`, `runtime: docker`, `dockerfilePath`, `healthCheckPath: /health`.
